@@ -1,7 +1,11 @@
-import sum from './sum';
-import './image_viewer';
+const button = document.createElement('button');
+button.innerText = 'click me';
+
+button.onclick = () => {
+    System.import('./image_viewer').then(module => {
+          module.default();
+    });
+};
 
 
-const total = sum(3 , 2);
-
-console.log(total);
+button.body.appendChild(button);
